@@ -2,7 +2,11 @@ package ir.mjimani.commission.resource.reseller;
 
 import ir.mjimani.commission.domain.Product;
 import ir.mjimani.commission.domain.Reseller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import ir.mjimani.commission.exception.error.CustomException;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author MjImani
@@ -12,6 +16,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("api/reseller")
 public interface ResellerResource {
 
+    @PostMapping
+    ResponseEntity<String> create(@RequestBody Reseller reseller) throws CustomException;
+
+    @PutMapping
+    ResponseEntity<Boolean> updateById(@RequestParam("id") String id,
+                                       @RequestBody Reseller reseller) throws CustomException;
+
+    @GetMapping
+    ResponseEntity<List<Reseller>> getList() throws CustomException;
+
+    @GetMapping
+    ResponseEntity<Reseller> getOneById(@RequestParam("id") String id) throws CustomException;
+
+    @DeleteMapping
+    ResponseEntity<Boolean> deleteById(@RequestParam("id") String id) throws CustomException;
 }
 
 

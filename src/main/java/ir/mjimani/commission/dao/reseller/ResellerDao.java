@@ -1,4 +1,4 @@
-package ir.mjimani.commission.service.reseller;
+package ir.mjimani.commission.dao.reseller;
 
 
 import ir.mjimani.commission.domain.Product;
@@ -10,11 +10,11 @@ import java.util.List;
 /**
  * @author MjImani
  * <p>
- * Spring service interface for the {@link Reseller} entity.
+ * Spring Data MongoDb dao interface for the {@link Reseller} entity.
  */
-public interface ResellerService {
+public interface ResellerDao {
 
-    String create(Reseller reseller) throws CustomException;
+    Reseller create(Reseller reseller) throws CustomException;
 
     Boolean updateById(String id, Reseller reseller) throws CustomException;
 
@@ -23,5 +23,5 @@ public interface ResellerService {
     Reseller getOneById(String id) throws CustomException;
 
     Boolean deleteById(String id) throws CustomException;
-
 }
+
