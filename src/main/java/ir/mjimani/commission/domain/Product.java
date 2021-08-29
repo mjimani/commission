@@ -29,10 +29,11 @@ public class Product {
     private Date modifyDate;
 
     public void validation() throws CustomException {
-        if (title == null || title.trim().isEmpty())
+        if (title == null || title.trim().isEmpty()) {
             throw new CustomException("Title is empty");
-
-        if (price == null || price <= 0)
+        }
+        if (price == null || price <= 0) {
             throw new CustomException("Price is not valid.");
+        }
     }
 }
