@@ -26,8 +26,8 @@ public interface CommissionResource {
     @GetMapping
     ResponseEntity<List<Commission>> getList() throws CustomException;
 
-    @GetMapping
-    ResponseEntity<Commission> getOneById(@RequestParam("id") String id) throws CustomException;
+    @GetMapping("{id}")
+    ResponseEntity<Commission> getOneById(@PathVariable("id") String id) throws CustomException;
 
     @DeleteMapping
     ResponseEntity<Boolean> deleteById(@RequestParam("id") String id) throws CustomException;

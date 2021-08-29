@@ -26,8 +26,8 @@ public interface ResellerResource {
     @GetMapping
     ResponseEntity<List<Reseller>> getList() throws CustomException;
 
-    @GetMapping
-    ResponseEntity<Reseller> getOneById(@RequestParam("id") String id) throws CustomException;
+    @GetMapping("{id}")
+    ResponseEntity<Reseller> getOneById(@PathVariable("id") String id) throws CustomException;
 
     @DeleteMapping
     ResponseEntity<Boolean> deleteById(@RequestParam("id") String id) throws CustomException;

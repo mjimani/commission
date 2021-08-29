@@ -25,8 +25,8 @@ public interface ProductResource {
     @GetMapping
     ResponseEntity<List<Product>> getList() throws CustomException;
 
-    @GetMapping
-    ResponseEntity<Product> getOneById(@RequestParam("id") String id) throws CustomException;
+    @GetMapping("{id}")
+    ResponseEntity<Product> getOneById(@PathVariable("id") String id) throws CustomException;
 
     @DeleteMapping
     ResponseEntity<Boolean> deleteById(@RequestParam("id") String id) throws CustomException;

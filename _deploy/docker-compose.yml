@@ -1,0 +1,13 @@
+version: '3'
+services:
+    commission:
+        container_name: 'commission'
+        image: commission
+        networks:
+            - mjimani-net
+        ports:
+            - '8080:8080'
+networks:
+    mjimani-net:
+        external:
+            name: mjimani-net
